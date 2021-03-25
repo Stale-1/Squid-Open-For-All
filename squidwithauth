@@ -1,7 +1,8 @@
-auth_param basic program /usr/lib/squid3/basic_ncsa_auth /etc/squid/htpasswd
-auth_param basic realm proxy
-acl authenticated proxy_auth REQUIRED
-http_access allow authenticated
+acl vpn src all
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd
+acl ncsa_users proxy_auth REQUIRED
+http_access allow vpn
+http_access allow ncsa_users
 http_access allow localhost manager
 http_access deny manager
 http_access allow localhost
