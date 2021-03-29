@@ -1,10 +1,6 @@
-acl vpn src all
-auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/squid_passwd
-acl ncsa_users proxy_auth REQUIRED
-http_access allow vpn
-http_access allow ncsa_users
+acl ph1 dst 103.38.215.138
 http_access allow localhost manager
 http_access deny manager
 http_access allow localhost
-http_access allow all
+http_access deny all
 http_port 1130
