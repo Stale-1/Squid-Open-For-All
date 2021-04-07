@@ -1,7 +1,6 @@
 #!/bin/bash
 # Debian-based installer for Ubuntu 18.04
 sudo apt update
-wget https://raw.githubusercontent.com/Stale-1/Squid-Open-For-All/main/resolve -O /etc/resolv.conf
 sudo apt -y install unbound stunnel4 ufw ddclient software-properties-common
 
 # Disable unbound temporarily as it causes an issue with dnsmasq until it is set up properly
